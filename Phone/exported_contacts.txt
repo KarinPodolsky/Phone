@@ -1,0 +1,3 @@
+karin, p, podolsky, 0542338571, quali
+karina, cheban, podolsky, 0545489673, qa
+misha, m, cheban, 0542338579, qt
