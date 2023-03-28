@@ -66,11 +66,6 @@ public class FileUtils {
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getName());
             }
-//            else {
-//                System.out.println("File already exists.");
-//                System.out.println("file deleted: " + myFile.delete());
-//                System.out.println("new file created: " + myFile.createNewFile());
-//            }
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -120,74 +115,7 @@ public class FileUtils {
         return data;
     }
 
-    public void WriteToMeetingFile(String meetingDetails) {
-        try {
-            FileWriter myWriter = new FileWriter("exported_meetings.txt", true);
-            myWriter.append(meetingDetails);
-            myWriter.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-    public String ReadMeetingFile() throws FileNotFoundException {
-        File file = new File("exported_meetings.txt");
-        Scanner sc = new Scanner(file);
-        sc.useDelimiter("\\Z");
-        String data = sc.next();
-        sc.close();
-        return data;
-    }
 
-    public void DeleteMeetingFile() throws IOException {
-        File file = new File("exported_meetings.txt");
-        System.out.println("file deleted: " + file.delete());
-        System.out.println("new file created: " + file.createNewFile());
-    }
-    public void DeleteOccasionFile() throws IOException {
-        File file = new File("exported_Occasions.txt");
-        System.out.println("file deleted: " + file.delete());
-        System.out.println("new file created: " + file.createNewFile());
-    }
-
-    public void WriteToOccasionFile(String description) {
-        try {
-            FileWriter myWriter = new FileWriter("exported_occasions.txt", true);
-            myWriter.append(description);
-            myWriter.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-
-    public String ReadOccasionFile() throws FileNotFoundException {
-        File file = new File("exported_occasions.txt");
-        Scanner sc = new Scanner(file);
-        sc.useDelimiter("\\Z");
-        String data = sc.next();
-        sc.close();
-        return data;
-    }
-
-    /**
-     * Method is used to return the amount of row in a file (By name)
-     *
-     * @return int with the amount of rows as the value
-     **/
-    public int getRowAmountInFile(String fileName) throws FileNotFoundException {
-        int amountOfRows = 0;
-        Path path = Paths.get(fileName);
-
-        int lines = 0;
-        try {
-            amountOfRows = (int) Files.lines(path).count();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return amountOfRows;
-    }
 }
 
 
