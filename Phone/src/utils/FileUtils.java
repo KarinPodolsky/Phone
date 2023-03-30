@@ -10,12 +10,18 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 
 public class FileUtils {
+
+    public void getProjectPath(){
+
+    }
+
+
     /**
      * Method is used to create a file (to hold the contact data)
      **/
     public void CreateContactFile() {
         try {
-            File myFile = new File("exported_contacts.txt");
+            File myFile = new File("src/files/exported_contacts.txt");
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getName());
             } else {
@@ -37,7 +43,7 @@ public class FileUtils {
      **/
     public void WriteToContactFile(String contactDetails) {
         try {
-            FileWriter myWriter = new FileWriter("exported_contacts.txt", true);
+            FileWriter myWriter = new FileWriter("files/exported_contacts.txt", true);
             myWriter.append(contactDetails);
             myWriter.close();
         } catch (IOException e) {
@@ -52,7 +58,7 @@ public class FileUtils {
      * @return string with all contacts separated by a new line and contact details separated by a comma
      **/
     public String ReadContactFile() throws FileNotFoundException {
-        File file = new File("exported_contacts.txt");
+        File file = new File("src/files/exported_contacts.txt");
         Scanner sc = new Scanner(file);
         sc.useDelimiter("\\Z");
         String data = sc.next();
@@ -62,7 +68,7 @@ public class FileUtils {
 
     public void CreateChatFile() {
         try {
-            File myFile = new File("exported_chats.txt");
+            File myFile = new File("src/files/exported_chats.txt");
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getName());
             }
@@ -74,7 +80,7 @@ public class FileUtils {
 
     public void ClearChatFile() {
         try {
-            File myFile = new File("exported_chats.txt");
+            File myFile = new File("src/files/exported_chats.txt");
             myFile.delete();
             myFile.createNewFile();
 //            }
@@ -92,7 +98,7 @@ public class FileUtils {
      **/
     public void WriteToChatFile(String contactDetails) {
         try {
-            FileWriter myWriter = new FileWriter("exported_chats.txt", true);
+            FileWriter myWriter = new FileWriter("src/files/exported_chats.txt", true);
             myWriter.append(contactDetails);
             myWriter.close();
         } catch (IOException e) {
@@ -107,7 +113,7 @@ public class FileUtils {
      * @return string with all contacts separated by a new line and contact details separated by a comma
      **/
     public String ReadChatFile() throws FileNotFoundException {
-        File file = new File("exported_chats.txt");
+        File file = new File("src/files/exported_chats.txt");
         Scanner sc = new Scanner(file);
         sc.useDelimiter("\\Z");
         String data = sc.next();

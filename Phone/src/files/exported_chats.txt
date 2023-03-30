@@ -1,0 +1,6 @@
+karin, p, podolsky, 0542338571, quali, hi
+karin, p, podolsky, 0542338571, quali, lol
+karin, p, podolsky, 0542338571, quali, hi
+karin, p, podolsky, 0542338571, quali, GG
+misha, m, cheban, 0542338579, qt, hi
+java.util.GregorianCalendar[time=1677029440001,areFieldsSet=true,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Asia/Jerusalem",offset=7200000,dstSavings=3600000,useDaylight=true,transitions=149,lastRule=java.util.SimpleTimeZone[id=Asia/Jerusalem,offset=7200000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=23,startDayOfWeek=6,startTime=7200000,startTimeMode=0,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2023,MONTH=1,WEEK_OF_YEAR=8,WEEK_OF_MONTH=4,DAY_OF_MONTH=22,DAY_OF_YEAR=53,DAY_OF_WEEK=4,DAY_OF_WEEK_IN_MONTH=4,AM_PM=0,HOUR=3,HOUR_OF_DAY=3,MINUTE=30,SECOND=40,MILLISECOND=1,ZONE_OFFSET=7200000,DST_OFFSET=0], misha, m, cheban, 0542338579, qt
