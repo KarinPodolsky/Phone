@@ -43,7 +43,7 @@ public class FileUtils {
      **/
     public void WriteToContactFile(String contactDetails) {
         try {
-            FileWriter myWriter = new FileWriter("files/exported_contacts.txt", true);
+            FileWriter myWriter = new FileWriter("src/files/exported_contacts.txt", true);
             myWriter.append(contactDetails);
             myWriter.close();
         } catch (IOException e) {
