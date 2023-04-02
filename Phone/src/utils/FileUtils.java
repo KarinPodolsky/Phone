@@ -65,7 +65,9 @@ public class FileUtils {
         sc.close();
         return data;
     }
-
+    /**
+     * Method is used to create a Chat file
+     **/
     public void CreateChatFile() {
         try {
             File myFile = new File("src/files/exported_chats.txt");
@@ -77,6 +79,9 @@ public class FileUtils {
             e.printStackTrace();
         }
     }
+    /**
+     * Method is used to clear the Chat file
+     **/
 
     public void ClearChatFile() {
         try {
@@ -91,10 +96,7 @@ public class FileUtils {
     }
 
     /**
-     * Method is used to write the contact data from the contact list to a file
-     *
-     * @param contactDetails - a string with the format:
-     *                       contact.name + ", " + contact.phoneNumber + "\n"
+     * Method is used to write to the Chat file
      **/
     public void WriteToChatFile(String contactDetails) {
         try {
@@ -107,11 +109,7 @@ public class FileUtils {
         }
     }
 
-    /**
-     * Method is used to write the contact data from the contact list to a file
-     *
-     * @return string with all contacts separated by a new line and contact details separated by a comma
-     **/
+
     public String ReadChatFile() throws FileNotFoundException {
         File file = new File("src/files/exported_chats.txt");
         Scanner sc = new Scanner(file);

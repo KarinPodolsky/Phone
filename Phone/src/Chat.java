@@ -70,6 +70,9 @@ public class Chat {
         }
     }
 
+    /**
+     * Method is used to create chat with contact
+     **/
     public void startChat() throws FileNotFoundException {
         FileUtils util = new FileUtils();
         util.CreateChatFile();
@@ -92,7 +95,9 @@ public class Chat {
         }
     }
 
-
+    /**
+     * Method is used to delete chat with contact
+     **/
     public void DeleteChat() throws FileNotFoundException {
         FileUtils util = new FileUtils();
         String new_message = "";
@@ -125,6 +130,9 @@ public class Chat {
         }
     }
 
+    /**
+     * Method is used to print a chat with specific contact
+     **/
     public void viewChat() throws FileNotFoundException {
         System.out.println("Contact list: ");
         this.phonebook.PrintContacts();
@@ -142,46 +150,59 @@ public class Chat {
             System.out.println("No messages with this contact");
         }
     }
-        public void SearchMessage ()  {
-            boolean found_message = false;
-            Set<String> contactWithMessage = new HashSet<>();
-            System.out.println("Enter the Message you would like to find: ");
-            String messageToFind = scanner.nextLine();
-            for (String[] message : this.messagesArray){
-               if (messageToFind.equals(message[5])){
-                   found_message = true;
-                   contactWithMessage.add(message[0] + " " + message[2]);
-//                   System.out.println(message[0] +" "+ message[2]);
-               }
-            } for (String contact : contactWithMessage){
-                System.out.println(contact);
-            }
-            if (!found_message) {
-                System.out.println("message not exists");
+
+    /**
+     * Method is used to found message and print the contact that hase that message
+     **/
+    public void SearchMessage() {
+        boolean found_message = false;
+        Set<String> contactWithMessage = new HashSet<>();
+        System.out.println("Enter the Message you would like to find: ");
+        String messageToFind = scanner.nextLine();
+        for (String[] message : this.messagesArray) {
+            if (messageToFind.equals(message[5])) {
+                found_message = true;
+                contactWithMessage.add(message[0] + " " + message[2]);
             }
         }
-
-        public void viewAllChats () throws FileNotFoundException {
-            FileUtils util = new FileUtils();
-            String str = util.ReadChatFile();
-            System.out.println(str);
+        for (String contact : contactWithMessage) {
+            System.out.println(contact);
         }
-
-        public void ExportChats (Contact ContactFound){
-            FileUtils util = new FileUtils();
-            //util.CreateChatFile();
-            util.WriteToChatFile(ContactFound.firstName + ", " + ContactFound.middleName + ", " + ContactFound.lastName + ", " + ContactFound.phoneNumber + ", " + ContactFound.company + ", " + this.messages + "\n");
-        }
-
-        public void ImportChats () throws FileNotFoundException {
-            FileUtils util = new FileUtils();
-            String str = util.ReadChatFile();
-            String[] strArr = str.split("\n");
-            for (String s : strArr) {
-                String[] subArr = s.split(", ");
-                this.messagesArray.add(subArr);
-            }
+        if (!found_message) {
+            System.out.println("message not exists");
         }
     }
+
+    /**
+     * Method is used to see all the chats
+     **/
+    public void viewAllChats() throws FileNotFoundException {
+        FileUtils util = new FileUtils();
+        String str = util.ReadChatFile();
+        System.out.println(str);
+    }
+
+    /**
+     * Method is used to export Chats from file
+     **/
+    public void ExportChats(Contact ContactFound) {
+        FileUtils util = new FileUtils();
+        //util.CreateChatFile();
+        util.WriteToChatFile(ContactFound.firstName + ", " + ContactFound.middleName + ", " + ContactFound.lastName + ", " + ContactFound.phoneNumber + ", " + ContactFound.company + ", " + this.messages + "\n");
+    }
+
+    /**
+     * Method is used to export Chats to file
+     **/
+    public void ImportChats() throws FileNotFoundException {
+        FileUtils util = new FileUtils();
+        String str = util.ReadChatFile();
+        String[] strArr = str.split("\n");
+        for (String s : strArr) {
+            String[] subArr = s.split(", ");
+            this.messagesArray.add(subArr);
+        }
+    }
+}
 
 

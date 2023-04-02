@@ -44,7 +44,7 @@ public class Phonebook {
             try {
                 numFromList = Integer.parseInt(input.nextLine());
             } catch (Exception e) {
-                System.out.println("Error");
+                //System.out.println("Error");
             }
             switch (numFromList) {
                 case 1:
@@ -137,11 +137,11 @@ public class Phonebook {
      **/
     public void PrintContacts() {
         for (Contact contact : contactList) {
-                if (contact.middleName.equals("")) {
-                    System.out.println(contact.firstName + " " + contact.lastName + " - " + contact.phoneNumber + " company: " + contact.company);
-                } else {
-                    System.out.println(contact.firstName + " " + contact.middleName + " " + contact.lastName + " - " + contact.phoneNumber + " company: " + contact.company);
-                }
+            if (contact.middleName.equals("")) {
+                System.out.println(contact.firstName + " " + contact.lastName + " - " + contact.phoneNumber + " company: " + contact.company);
+            } else {
+                System.out.println(contact.firstName + " " + contact.middleName + " " + contact.lastName + " - " + contact.phoneNumber + " company: " + contact.company);
+            }
         }
         System.out.println("");
     }
